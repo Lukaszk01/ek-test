@@ -54,16 +54,19 @@
 </template>
 
 <script>
+
 export default {
-  name: 'Home',
+  name: 'home',
   props: {
     msg: String
   }
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
 
-<style>
+
 .split {
   height: 100%;
   width: 50%;
@@ -227,7 +230,7 @@ h1 {
   border-radius: 13px;
   font-family: Roboto-Medium;
   color: #FFFFFF;
-  display-content: center;
+  
   display: flex;
   position: relative;
   border: 1px solid black;
@@ -336,4 +339,6 @@ header p {
   display: none;
 }
 }
+
+
 </style>
