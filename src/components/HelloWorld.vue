@@ -1,32 +1,55 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+<div class="split left">
+  <div class="centered">
+    <img class="planet" src="@/assets/Image.png" style="width: 700px height: 1050px" alt="">
+    <!-- <img class="image" src="@/assets/logInPageImage.svg" alt=""> -->
+    <div class="logo"> <p>LOGO</p> </div>
+  </div>
+</div>
+<div class="split right col-12">
+  <header class="text-left"> <p>LOGO</p> </header>
+  <div class="centered-right">
+    <div class="container">
+      <h1>Log in</h1>
+        <p class="log-inf">Email Address</p>
+          <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light mt-3 mb-3 ml-1"></div>
+        <p class="log-inf">Password</p>
+          <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light mt-3 mb-3 ml-1"></div>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+          <div class="col">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-start">
+                <div class="checkbox"></div>
+                <p class="log-inf ml-3">REMEBER ME</p>
+              </div>
+            <p class="forgot-password justify-content-end">Forgot Password</p>
+          </div>
+        </div>
+      </div>
+      </div>
+        <div class="container">
+          <div class="row text-center">
+            <div class="col">
+              <div class="d-flex justify-content-between">
+                <div class="button-cancel text-center mt-3">CANCEL</div>
+                <div class="button-login mt-3"><router-link class="link" to="/main">LOGIN</router-link></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row text-center">
+            <div class="col">
+              <div class="d-flex justify-content-end">
+                <div class="thin-text p-3">Don't have account yet?</div>
+                <div class="sign-up p-3">Sign Up here</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
 </template>
 
