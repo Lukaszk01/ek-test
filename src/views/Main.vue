@@ -53,6 +53,68 @@ export default defineComponent({
 </script>
 
 <style>
+ .single-show {
+    width: 1100px;
+    height: 300px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: rgba(0,0,0,0.87);
+    text-align: left;
+    font-family: Roboto-Medium;
+    background: #D6D8E7;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow: auto;
+  }
+  .series-card-poster {
+    border-radius: 25px;
+    height: 300px;
+    width: 200px;
+    opacity: 0.7;
+    padding: 20px;
+    object-fit: fill;
+    margin: 0px;
+  }
+  .row>* {
+    width: 30%;
+    margin-left: 0px;
+  }
+  .info p {
+    font-family: Roboto-Medium;
+    font-size: 12px;
+    color: rgba(0,0,0,0.87);
+    text-align: left;
+    margin: 50px;
+    width: 800px;
+  }
+  ul {
+    font-size: 12px;
+  }
+  .series-card-title {
+    text-decoration: none;
+    width: 500px;
 
+  }
+  a {
+    text-decoration: none;
+  }
+  .image {
+    margin-right: -140px;
+  }
+  .series-card-summary {
+    font-size: 16px;
+    width: 800px;
+    word-wrap: break-word;
+  }
+  .series-genres {
+    white-space: nowrap;
+  }
+  .series-genres-item {
+    font-weight: normal;
+  }
+  .genre {
+    width: 200px;
+    font-size: 20px;
+  }
 
 </style>
