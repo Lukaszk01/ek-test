@@ -1,120 +1,130 @@
 <template>
-      <article class="series-card" :class="{ 'is-favorite': isFavorite }">
-    <router-link class="series-card-link" :to="showUrl">
-      <div class="container">
-        <div class="single-show">
-          <div class="row">
-            <div class="image">
-              <img class="series-card-poster" :src="showImage" :alt="item.show.name" />
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="info">
-                    <header class="series-card-header">
-                      <h2 class="series-card-title mt-3">{{ item.show.name }}</h2>
-                        <h2 class="series-card-summary">{{ item.show.summary.replace(reg, "") }}</h2>
-                        <h3 class="genre"><b>Genre: </b></h3>
-                        <div class="series-genres">
-                          <div
-                            class="series-genres-item"
-                            v-for="genre in item.show.genres"
-                            :key="genre"
-                            >
-                            <div>{{ genre }}</div>
-                        </div>
-                        <div><b>Runtime: </b>{{ item.show.runtime}}min</div>
-                      </div>
-                  </header> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
-
-      
-
-
-      
-    </router-link>
-  </article>
+	<div >
+    <Search @submit:query="fetchData" />
+    <div v-if="$route.query.search" class="series-listing">
+      <SearchResult
+        v-for="item in showsData"
+        :item="item"
+        :key="item.show.id"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import axios from "axios";
+import Search from "../components/Search";
+import SearchResult from "../components/SearchResult";
 
-export default defineComponent({
-    setup() {
-        
+export default {
+	components: {
+		Search,
+		SearchResult,
+  },
+  data() {
+    return {
+      showsData: []
+    };
+  },
+  created() {
+    this.fetchDataFromQuery();
+  },
+  watch: {
+    $route() {
+      this.fetchDataFromQuery();
+    }
+  },
+  methods: {
+    async fetchData(showsQuery) {
+      try {
+        const response = await axios.get(
+          `http://api.tvmaze.com/search/shows?q=${showsQuery}`
+        );
+        this.setUrlQuery(showsQuery);
+        this.showsData = response.data;
+      } catch (err) {
+        console.error(err.message);
+      }
     },
-})
+    setUrlQuery(searchQuery) {
+      if (this.$route.query.search !== searchQuery) {
+        this.$router.push({
+          name: "Main",
+          query: {
+            search: searchQuery
+          }
+        });
+      }
+    },
+    fetchDataFromQuery() {
+      const search = this.$route.query.search;
+      if (search && search !== "") {
+        this.fetchData(search);
+      }
+    }
+  }
+};
 </script>
-
 <style>
- .single-show {
-    width: 1100px;
-    height: 300px;
-    border-radius: 20px;
-    font-size: 20px;
-    color: rgba(0,0,0,0.87);
-    text-align: left;
-    font-family: Roboto-Medium;
-    background: #D6D8E7;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-    overflow: auto;
-  }
-  .series-card-poster {
-    border-radius: 25px;
-    height: 300px;
-    width: 200px;
-    opacity: 0.7;
-    padding: 20px;
-    object-fit: fill;
-    margin: 0px;
-  }
-  .row>* {
-    width: 30%;
-    margin-left: 0px;
-  }
-  .info p {
-    font-family: Roboto-Medium;
-    font-size: 12px;
-    color: rgba(0,0,0,0.87);
-    text-align: left;
-    margin: 50px;
-    width: 800px;
-  }
-  ul {
-    font-size: 12px;
-  }
-  .series-card-title {
-    text-decoration: none;
-    width: 500px;
 
-  }
-  a {
-    text-decoration: none;
-  }
-  .image {
-    margin-right: -140px;
-  }
-  .series-card-summary {
-    font-size: 16px;
-    width: 800px;
-    word-wrap: break-word;
-  }
-  .series-genres {
-    white-space: nowrap;
-  }
-  .series-genres-item {
-    font-weight: normal;
-  }
-  .genre {
-    width: 200px;
-    font-size: 20px;
-  }
+	.single-show {
+		width: 1100px;
+		height: 300px;
+		border-radius: 20px;
+		font-size: 20px;
+		color: rgba(0,0,0,0.87);
+		text-align: left;
+		font-family: Roboto-Medium;
+		background: #D6D8E7;
+	}
+	.img {
 
+		border-radius: 25px;
+		height: 300px;
+		width: 200px;
+		opacity: 0.7;
+		padding: 10px;
+		object-fit: fill;
+		margin: 0px;
+	}
+	.row>* {
+		width: 30%;
+		margin-left: 0px;
+	}
+	.info p {
+		font-family: Roboto-Medium;
+		font-size: 12px;
+		color: rgba(0,0,0,0.87);
+		text-align: left;
+		margin: 50px;
+		width: 800px;
+	}
+	ul {
+		font-size: 12px;
+	}
+	.series-listing {
+		margin: 100px;
+	}
+	#search-form__input {
+		margin-top: 50px;
+		border-radius: 10px;
+		border: 1px solid gray;
+		margin-left: 10px;
+		box-shadow: 0.5px 0.5px 2px gray;
+		height: 30px;
+		width: 200px;
+		font-size: 20px;
+	}
+	button {
+		border-radius: 10px;
+		border: 1px solid gray;
+		margin: 5px;
+		box-shadow: 0.5px 0.5px 2px gray;
+		background-color: #1A1B35;
+		color: #FFFF;
+		font-family: Roboto-Medium;
+	}
+	button:hover {
+		color: #1A1B35;
+	}
 </style>
