@@ -1,8 +1,9 @@
 <template>
   <article class="series-card" :class="{ 'is-favorite': isFavorite }">
     <router-link class="series-card-link" :to="showUrl">
+    <transition name="fade">
       <div class="container">
-        <div class="single-show">
+        <div v-if="show" class="single-show">
           <div class="row">
             <div class="image">
               <img class="series-card-poster" :src="showImage" :alt="item.show.name" />
@@ -37,7 +38,7 @@
       
 
 
-      
+    </transition>
     </router-link>
   </article>
 </template>
@@ -53,6 +54,7 @@ export default {
   },
   data() {
     return {
+      show: true,
       reg: /<[^>]*>/gm,
       favoriteShows: favoriteStorage.fetch(),
       isFavorite: null,

@@ -9,6 +9,9 @@
       />
     </div>
   </div>
+
+
+
 </template>
 
 <script>
@@ -23,7 +26,7 @@ export default {
   },
   data() {
     return {
-      showsData: []
+      showsData: [],
     };
   },
   created() {
@@ -115,16 +118,26 @@ export default {
 		width: 200px;
 		font-size: 20px;
 	}
-	button {
-		border-radius: 10px;
-		border: 1px solid gray;
-		margin: 5px;
-		box-shadow: 0.5px 0.5px 2px gray;
-		background-color: #1A1B35;
-		color: #FFFF;
-		font-family: Roboto-Medium;
-	}
-	button:hover {
-		color: #1A1B35;
-	}
+
+.theBox {
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 2%;
+  background-color: #e0e0e0;
+    ;}
+button {
+  width: 5em;
+  height: 2em;
+  margin: 0.5em;
+  border-radius: 5px;
+  background: linear-gradient(to right, #16c0b0, #84cf6a);
+  font-size: 1em;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 </style>

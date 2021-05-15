@@ -326,6 +326,8 @@ header p {
 @media only screen and (min-width: 992px) {
   .centered img {
     display: flex;
+    width: 700px;
+    height: 1050px;
   }
   [class*="col-"] {
     width: 50%;
