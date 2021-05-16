@@ -3503,6 +3503,11 @@
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
 
+"es6-object-assign@^1.1.0":
+  "integrity" "sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw="
+  "resolved" "https://registry.npmjs.org/es6-object-assign/-/es6-object-assign-1.1.0.tgz"
+  "version" "1.1.0"
+
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
@@ -6793,6 +6798,11 @@
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   "version" "1.0.1"
 
+"promise-polyfill@^6.0.2":
+  "integrity" "sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc="
+  "resolved" "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-6.1.0.tgz"
+  "version" "6.1.0"
+
 "proxy-addr@~2.0.5":
   "integrity" "sha512-dh/frvCBVmSsDYzw6n926jv974gddhkFPfiN8hPOi30Wax25QZyZEGveluCgliBnqmuM+UJmBErbAUFIoDbjOw=="
   "resolved" "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.6.tgz"
@@ -7957,6 +7967,14 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
+"sweetalert@^2.1.2":
+  "integrity" "sha512-iWx7X4anRBNDa/a+AdTmvAzQtkN1+s4j/JJRWlHpYE8Qimkohs8/XnFcWeYHH2lMA8LRCa5tj2d244If3S/hzA=="
+  "resolved" "https://registry.npmjs.org/sweetalert/-/sweetalert-2.1.2.tgz"
+  "version" "2.1.2"
+  dependencies:
+    "es6-object-assign" "^1.1.0"
+    "promise-polyfill" "^6.0.2"
+
 "table@^5.2.3":
   "integrity" "sha512-wmEc8m4fjnob4gt5riFRtTu/6+4rSe12TpAELNSqHMfF3IqnA+CH37USM6/YR3qRZv7e56kAEAtd6nKZaxe0Ug=="
   "resolved" "https://registry.npmjs.org/table/-/table-5.4.6.tgz"
@@ -8439,6 +8457,13 @@
     "esquery" "^1.4.0"
     "lodash" "^4.17.15"
 
+"vue-full-loading@^1.2.1":
+  "integrity" "sha512-zD5bi2zsmrowQJIg8pF6NThNvnmzDeCg9gtfAH9c+lC3nCHlrxmpYHhi75TQmS3m0myKK17M/Lk25kgZEfgswQ=="
+  "resolved" "https://registry.npmjs.org/vue-full-loading/-/vue-full-loading-1.2.1.tgz"
+  "version" "1.2.1"
+  dependencies:
+    "vue" "^2.2.1"
+
 "vue-hot-reload-api@^2.3.0":
   "integrity" "sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog=="
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
@@ -8464,12 +8489,27 @@
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
 
+"vue-notifications@^1.0.2":
+  "integrity" "sha512-D9a3bhqW18tf4uRqFwh3Q0vIlcP9ipVnieyX2hAb/bqrGyVAx/JWPTqky7py9mU/DDaL5BY49MJzsctIDr7i2g=="
+  "resolved" "https://registry.npmjs.org/vue-notifications/-/vue-notifications-1.0.2.tgz"
+  "version" "1.0.2"
+
 "vue-router@^4.0.8":
   "integrity" "sha512-42mWSQaH7CCBQDspQTHv63f34VEnZC20g9QNK4WJ/zW8SdIUeT6TQ2i/78fjF/pVBUPLBWrGhvB7uDnaz7O/pA=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.0.8.tgz"
   "version" "4.0.8"
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.10"
+
+"vue-simple-spinner@^1.2.10":
+  "integrity" "sha512-hrDT+HVSBnesLXBni9SRSvZdiiJhbOFbRbASWcGXqNQpONoLIshEdG4BFv0l80Q7ysj46mGqI86my4gXHkDpCw=="
+  "resolved" "https://registry.npmjs.org/vue-simple-spinner/-/vue-simple-spinner-1.2.10.tgz"
+  "version" "1.2.10"
+
+"vue-spinners@^1.0.2":
+  "integrity" "sha512-Wndmjn9PN5Y+L1m94n7rMqzhi+2QZMMqJtF9hDW13K2wa5x73Yguh99zcbSLQJyz7mwQ4xQOWbOFIyklgHdOLw=="
+  "resolved" "https://registry.npmjs.org/vue-spinners/-/vue-spinners-1.0.2.tgz"
+  "version" "1.0.2"
 
 "vue-style-loader@^4.1.0", "vue-style-loader@^4.1.2":
   "integrity" "sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg=="
@@ -8492,6 +8532,11 @@
     "@vue/compiler-dom" "3.0.11"
     "@vue/runtime-dom" "3.0.11"
     "@vue/shared" "3.0.11"
+
+"vue@^2.2.1":
+  "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
+  "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
+  "version" "2.6.12"
 
 "watchpack-chokidar2@^2.0.1":
   "integrity" "sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww=="

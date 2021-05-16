@@ -35,6 +35,9 @@
               <div class="d-flex justify-content-between">
                 <div class="button-cancel text-center mt-3">CANCEL</div>
                 <div class="button-login mt-3"><router-link class="link" to="/main">LOGIN</router-link></div>
+                <transition name="fade" mode="out-in">
+                <router-view />
+                </transition>
               </div>
             </div>
           </div>
@@ -63,7 +66,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 
 
@@ -169,7 +172,7 @@ export default {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.9s ease-out;
 }
 .fade-leave-to {
   opacity: 0;
@@ -182,10 +185,7 @@ export default {
 .slide-fade-leave-active {
   transition: all 0.2s ease;
 }
-.slide-fade-leave-to {
-  transform: translateX(-10px);
-  opacity: 0;
-}
+
 .container {
   width: 500px;
 }
@@ -326,6 +326,8 @@ header p {
 @media only screen and (min-width: 992px) {
   .centered img {
     display: flex;
+    width: 700px;
+    height: 1050px;
   }
   [class*="col-"] {
     width: 50%;

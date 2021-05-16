@@ -1,5 +1,9 @@
 <template>
-     <router-view></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+    
+
       <div class="footer">
         <div class="row text-left">
           <ul id="fo">
@@ -34,29 +38,8 @@
   border-radius: 2%;
   background-color: #e0e0e0;
 }
-/*** TRANSITIONS ***/
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease-out;
-}
-.fade-leave-to {
-  opacity: 0;
-}
-.slide-fade-enter {
-  transform: translateX(10px);
-  opacity: 0;
-}
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 0.2s ease;
-}
-.slide-fade-leave-to {
-  transform: translateX(-10px);
-  opacity: 0;
-}
+
+
 .term-of-service {
   margin-left: 20px;
 }
@@ -85,6 +68,7 @@
 }
 #fo {
   display: inline-block;
+  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -115,4 +99,20 @@
   margin-right: 69%;
 }
 }
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s ease-out;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 2s ease;
+}
+
 </style>

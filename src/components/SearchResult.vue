@@ -1,8 +1,9 @@
 <template>
   <article class="series-card" :class="{ 'is-favorite': isFavorite }">
-    <router-link class="series-card-link" :to="showUrl">
+    <!-- <router-link class="series-card-link" :to="item.show.url"> -->
+    <transition name="fade">
       <div class="container">
-        <div class="single-show">
+        <div v-if="show" class="single-show">
           <div class="row">
             <div class="image">
               <img class="series-card-poster" :src="showImage" :alt="item.show.name" />
@@ -13,7 +14,7 @@
                     <header class="series-card-header">
                       <h2 class="series-card-title mt-3">{{ item.show.name }}</h2>
                         <h2 class="series-card-summary">{{ item.show.summary.replace(reg, "") }}</h2>
-                        <h3 class="genre"><b>Genre: </b></h3>
+                        <h3 class="genre"><b>Genre:</b></h3>
                         <div class="series-genres">
                           <div
                             class="series-genres-item"
@@ -22,7 +23,10 @@
                             >
                             <div>{{ genre }}</div>
                         </div>
+                        <!--  -->
                         <div><b>Runtime: </b>{{ item.show.runtime}}min</div>
+                        
+                        <div><b>More info at:</b> {{item.show.url}}</div>
                       </div>
                   </header> 
                 </div>
@@ -32,13 +36,8 @@
         </div>
       </div>
       
-      
-
-      
-
-
-      
-    </router-link>
+    </transition>
+    <!-- </router-link> -->
   </article>
 </template>
 
@@ -53,6 +52,7 @@ export default {
   },
   data() {
     return {
+      show: true,
       reg: /<[^>]*>/gm,
       favoriteShows: favoriteStorage.fetch(),
       isFavorite: null,
@@ -80,6 +80,51 @@ export default {
 </script>
 
 <style>
+
+.container {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+Resources
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.9s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
   .single-show {
     width: 1100px;
     height: 300px;
@@ -92,6 +137,13 @@ export default {
     margin-bottom: 20px;
     word-wrap: break-word;
     overflow: auto;
+    transition: 2s;
+  }
+  .single-show:hover {
+    width: 1200px;
+    height: 400px;
+    transition: 2s;
+    padding: 20px
   }
   .series-card-poster {
     border-radius: 25px;
@@ -102,6 +154,7 @@ export default {
     object-fit: fill;
     margin: 0px;
   }
+
   .row>* {
     width: 30%;
     margin-left: 0px;

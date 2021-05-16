@@ -9,6 +9,10 @@
       />
     </div>
   </div>
+
+
+
+
 </template>
 
 <script>
@@ -16,14 +20,15 @@ import axios from "axios";
 import Search from "../components/Search";
 import SearchResult from "../components/SearchResult";
 
+
 export default {
 	components: {
 		Search,
-		SearchResult,
+        SearchResult,
   },
   data() {
     return {
-      showsData: []
+      showsData: [],
     };
   },
   created() {
@@ -115,16 +120,49 @@ export default {
 		width: 200px;
 		font-size: 20px;
 	}
-	button {
-		border-radius: 10px;
-		border: 1px solid gray;
-		margin: 5px;
-		box-shadow: 0.5px 0.5px 2px gray;
-		background-color: #1A1B35;
-		color: #FFFF;
-		font-family: Roboto-Medium;
-	}
-	button:hover {
-		color: #1A1B35;
-	}
+
+.theBox {
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 2%;
+  background-color: #e0e0e0;
+    ;}
+button {
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 5px;
+    box-shadow: 0.5px 0.5px 2px gray;
+    background-color: #1A1B35;
+    color: #FFFF;
+    font-family: Roboto-Medium;
+}
+button:hover {
+    color:#1A1B35;
+}
+.button-cancel {
+  width: 100px;
+  height: 30px;
+  background: #1A1B35;
+  border-radius: 100px;
+  font-family: Roboto-Medium;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+
+}
+.button-login {
+  width: 100px;
+  height: 30px;
+  background-image: linear-gradient(132deg, #62419A 0%, #3E76EB 100%);
+  border-radius: 100px;
+  font-family: Roboto-Medium;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+}
 </style>
