@@ -4,6 +4,9 @@
   Congratulations! You has been succesfully logged in!!.
 </div>
 <div class="button-login mt-3 ml-3"><router-link class="link" to="/">LOGOUT</router-link></div>
+  <transition name="fade">
+    <router-view />
+  </transition>
   <div>
     <form @submit.prevent="emitQuery">
       <label for="search-form__input">Pick a TV show you like!</label>
@@ -59,13 +62,26 @@ export default {
 };
 </script>
 <style>
+.fade-enter {
+  opacity: 0;
+}
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.9s ease;
+  transition: opacity 0.9s ease-out;
 }
-
-.fade-enter-from,
 .fade-leave-to {
+  opacity: 0;
+}
+.slide-fade-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.4s ease;
+}
+.slide-fade-leave-to {
+  transform: translateX(-10px);
   opacity: 0;
 }
 .alert {

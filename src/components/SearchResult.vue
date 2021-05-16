@@ -1,7 +1,7 @@
 <template>
   <article class="series-card" :class="{ 'is-favorite': isFavorite }">
     <router-link class="series-card-link" :to="showUrl">
-    <!-- <transition name="fade"> -->
+    <transition name="fade">
       <div class="container">
         <div v-if="show" class="single-show">
           <div class="row">
@@ -34,7 +34,7 @@
         </div>
       </div>
       
-    <!-- </transition> -->
+    </transition>
     </router-link>
   </article>
 </template>
@@ -78,6 +78,41 @@ export default {
 </script>
 
 <style>
+
+.container {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+Resources
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.9s ease;
@@ -104,8 +139,9 @@ export default {
   }
   .single-show:hover {
     width: 1200px;
-    height: 500px;
+    height: 400px;
     transition: 2s;
+    padding: 20px
   }
   .series-card-poster {
     border-radius: 25px;

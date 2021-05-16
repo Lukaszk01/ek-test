@@ -1,5 +1,9 @@
 <template>
-     <router-view></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+    
+
       <div class="footer">
         <div class="row text-left">
           <ul id="fo">
@@ -95,4 +99,20 @@
   margin-right: 69%;
 }
 }
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.9s ease-out;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.4s ease;
+}
+
 </style>
