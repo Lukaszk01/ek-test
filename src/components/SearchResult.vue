@@ -1,6 +1,6 @@
 <template>
   <article class="series-card" :class="{ 'is-favorite': isFavorite }">
-    <router-link class="series-card-link" :to="showUrl">
+    <!-- <router-link class="series-card-link" :to="item.show.url"> -->
     <transition name="fade">
       <div class="container">
         <div v-if="show" class="single-show">
@@ -14,7 +14,7 @@
                     <header class="series-card-header">
                       <h2 class="series-card-title mt-3">{{ item.show.name }}</h2>
                         <h2 class="series-card-summary">{{ item.show.summary.replace(reg, "") }}</h2>
-                        <h3 class="genre"><b>Genre: </b></h3>
+                        <h3 class="genre"><b>Genre:</b></h3>
                         <div class="series-genres">
                           <div
                             class="series-genres-item"
@@ -23,8 +23,10 @@
                             >
                             <div>{{ genre }}</div>
                         </div>
+                        <!--  -->
                         <div><b>Runtime: </b>{{ item.show.runtime}}min</div>
-                        <a href={{item.show.url}}></a>
+                        
+                        <div><b>More info at:</b> {{item.show.url}}</div>
                       </div>
                   </header> 
                 </div>
@@ -35,7 +37,7 @@
       </div>
       
     </transition>
-    </router-link>
+    <!-- </router-link> -->
   </article>
 </template>
 

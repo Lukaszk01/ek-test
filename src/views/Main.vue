@@ -12,6 +12,7 @@
 
 
 
+
 </template>
 
 <script>
@@ -19,10 +20,11 @@ import axios from "axios";
 import Search from "../components/Search";
 import SearchResult from "../components/SearchResult";
 
+
 export default {
 	components: {
 		Search,
-		SearchResult,
+        SearchResult,
   },
   data() {
     return {

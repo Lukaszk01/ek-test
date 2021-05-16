@@ -3,6 +3,8 @@
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
   Congratulations! You has been succesfully logged in!!.
 </div>
+
+
 <div class="button-login mt-3 ml-3"><router-link class="link" to="/">LOGOUT</router-link></div>
   <transition name="fade">
     <router-view />
@@ -67,7 +69,7 @@ export default {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.9s ease-out;
+  transition: opacity 2s ease-out;
 }
 .fade-leave-to {
   opacity: 0;
@@ -78,7 +80,7 @@ export default {
 }
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.4s ease;
+  transition: all 2s ease;
 }
 .slide-fade-leave-to {
   transform: translateX(-10px);

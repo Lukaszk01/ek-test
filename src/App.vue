@@ -104,7 +104,7 @@
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.9s ease-out;
+  transition: opacity 2s ease-out;
 }
 .fade-leave-to {
   opacity: 0;
@@ -112,7 +112,7 @@
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.4s ease;
+  transition: all 2s ease;
 }
 
 </style>
