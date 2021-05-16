@@ -1,7 +1,7 @@
 <template>
   <article class="series-card" :class="{ 'is-favorite': isFavorite }">
     <router-link class="series-card-link" :to="showUrl">
-    <transition name="fade">
+    <!-- <transition name="fade"> -->
       <div class="container">
         <div v-if="show" class="single-show">
           <div class="row">
@@ -24,6 +24,7 @@
                             <div>{{ genre }}</div>
                         </div>
                         <div><b>Runtime: </b>{{ item.show.runtime}}min</div>
+                        <a href={{item.show.url}}></a>
                       </div>
                   </header> 
                 </div>
@@ -33,12 +34,7 @@
         </div>
       </div>
       
-      
-
-      
-
-
-    </transition>
+    <!-- </transition> -->
     </router-link>
   </article>
 </template>
@@ -82,6 +78,16 @@ export default {
 </script>
 
 <style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.9s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
   .single-show {
     width: 1100px;
     height: 300px;
@@ -94,6 +100,12 @@ export default {
     margin-bottom: 20px;
     word-wrap: break-word;
     overflow: auto;
+    transition: 2s;
+  }
+  .single-show:hover {
+    width: 1200px;
+    height: 500px;
+    transition: 2s;
   }
   .series-card-poster {
     border-radius: 25px;
@@ -104,6 +116,7 @@ export default {
     object-fit: fill;
     margin: 0px;
   }
+
   .row>* {
     width: 30%;
     margin-left: 0px;

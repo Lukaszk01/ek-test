@@ -129,15 +129,38 @@ export default {
   background-color: #e0e0e0;
     ;}
 button {
-  width: 5em;
-  height: 2em;
-  margin: 0.5em;
-  border-radius: 5px;
-  background: linear-gradient(to right, #16c0b0, #84cf6a);
-  font-size: 1em;
-  color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 5px;
+    box-shadow: 0.5px 0.5px 2px gray;
+    background-color: #1A1B35;
+    color: #FFFF;
+    font-family: Roboto-Medium;
+}
+button:hover {
+    color:#1A1B35;
+}
+.button-cancel {
+  width: 100px;
+  height: 30px;
+  background: #1A1B35;
+  border-radius: 100px;
+  font-family: Roboto-Medium;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+
+}
+.button-login {
+  width: 100px;
+  height: 30px;
+  background-image: linear-gradient(132deg, #62419A 0%, #3E76EB 100%);
+  border-radius: 100px;
+  font-family: Roboto-Medium;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
 }
 </style>
