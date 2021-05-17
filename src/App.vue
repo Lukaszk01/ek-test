@@ -1,24 +1,21 @@
 <template>
-        <transition name="fade" mode="out-in">
-          <router-view />
-        </transition>
-    
-
-      <div class="footer">
-        <div class="row text-left">
-          <ul id="fo">
-            <li class="term-of-service">Terms of Service</li>
-            <li class="contact-us">Contact Us</li>
-            <li><img src="@/assets/facebook.svg" alt=""></li>
-            <li class=""><img src="@/assets/instagram.svg" alt=""></li>
-            <li class=""><img src="@/assets/tweeter.svg" alt=""></li>
-            <li class=""><img src="@/assets/soundcloud.svg" alt=""></li>
-            <li class=""><img src="@/assets/spotify.svg" alt=""></li>
-          </ul>  
-        </div>
-      </div>
+<transition name="fade" mode="out-in">
+  <router-view />
+</transition>
+<div class="footer">
+  <div class="row text-left">
+    <ul id="fo">
+      <li class="term-of-service">Terms of Service</li>
+      <li class="contact-us">Contact Us</li>
+      <li><img src="@/assets/facebook.svg" alt=""></li>
+      <li class=""><img src="@/assets/instagram.svg" alt=""></li>
+      <li class=""><img src="@/assets/tweeter.svg" alt=""></li>
+      <li class=""><img src="@/assets/soundcloud.svg" alt=""></li>
+      <li class=""><img src="@/assets/spotify.svg" alt=""></li>
+    </ul>  
+  </div>
+</div>
 </template>
-
 
 <style>
 #app {
@@ -28,7 +25,6 @@
   text-align: center;
   color: #2c3e50;
 }
-
 .modal {
   width: 250px;
   height: 200px;
@@ -38,8 +34,6 @@
   border-radius: 2%;
   background-color: #e0e0e0;
 }
-
-
 .term-of-service {
   margin-left: 20px;
 }
@@ -70,7 +64,6 @@
   display: inline-block;
   width: 100%;
 }
-
 @media only screen and (max-width: 600px) {
   .footer {
     height: 80px;
@@ -109,10 +102,8 @@
 .fade-leave-to {
   opacity: 0;
 }
-
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 2s ease;
 }
-
 </style>

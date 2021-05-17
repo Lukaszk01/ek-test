@@ -16,17 +16,12 @@
                         <h2 class="series-card-summary">{{ item.show.summary.replace(reg, "") }}</h2>
                         <h3 class="genre"><b>Genre:</b></h3>
                         <div class="series-genres">
-                          <div
-                            class="series-genres-item"
-                            v-for="genre in item.show.genres"
-                            :key="genre"
-                            >
+                        <div class="series-genres-item" 
+                          v-for="genre in item.show.genres" :key="genre">
                             <div>{{ genre }}</div>
                         </div>
-                        <!--  -->
                         <div><b>Runtime: </b>{{ item.show.runtime}}min</div>
-                        
-                        <div><b>More info at:</b> {{item.show.url}}</div>
+                        <div><b>Show's link: </b>{{item.show.url}}</div>
                       </div>
                   </header> 
                 </div>
@@ -124,7 +119,6 @@ Resources
 .fade-leave-to {
   opacity: 0;
 }
-
   .single-show {
     width: 1100px;
     height: 300px;

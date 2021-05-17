@@ -10,9 +10,6 @@
     </div>
   </div>
 
-
-
-
 </template>
 
 <script>
@@ -25,53 +22,52 @@ export default {
 	components: {
 		Search,
         SearchResult,
-  },
-  data() {
-    return {
-      showsData: [],
-    };
-  },
-  created() {
-    this.fetchDataFromQuery();
-  },
-  watch: {
-    $route() {
-      this.fetchDataFromQuery();
-    }
-  },
-  methods: {
-    async fetchData(showsQuery) {
-      try {
-        const response = await axios.get(
-          `http://api.tvmaze.com/search/shows?q=${showsQuery}`
-        );
-        this.setUrlQuery(showsQuery);
-        this.showsData = response.data;
-      } catch (err) {
-        console.error(err.message);
-      }
     },
-    setUrlQuery(searchQuery) {
-      if (this.$route.query.search !== searchQuery) {
-        this.$router.push({
-          name: "Main",
-          query: {
-            search: searchQuery
-          }
-        });
-      }
+    data() {
+        return {
+        showsData: [],
+        };
     },
-    fetchDataFromQuery() {
-      const search = this.$route.query.search;
-      if (search && search !== "") {
-        this.fetchData(search);
-      }
+    created() {
+        this.fetchDataFromQuery();
+    },
+    watch: {
+        $route() {
+        this.fetchDataFromQuery();
+        }
+    },
+    methods: {
+        async fetchData(showsQuery) {
+        try {
+            const response = await axios.get(
+            `http://api.tvmaze.com/search/shows?q=${showsQuery}`
+            );
+            this.setUrlQuery(showsQuery);
+            this.showsData = response.data;
+        } catch (err) {
+            console.error(err.message);
+        }
+        },
+        setUrlQuery(searchQuery) {
+        if (this.$route.query.search !== searchQuery) {
+            this.$router.push({
+            name: "Main",
+            query: {
+                search: searchQuery
+            }
+            });
+        }
+        },
+        fetchDataFromQuery() {
+        const search = this.$route.query.search;
+        if (search && search !== "") {
+            this.fetchData(search);
+        }
+        }
     }
-  }
 };
 </script>
 <style>
-
 	.single-show {
 		width: 1100px;
 		height: 300px;

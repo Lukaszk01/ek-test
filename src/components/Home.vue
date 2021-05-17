@@ -66,10 +66,7 @@ export default {
 }
 </script>
 
-
 <style scoped>
-
-
 .split {
   height: 100%;
   width: 50%;
@@ -339,8 +336,6 @@ header p {
   top: 0px;
   width: 100%;
   display: none;
+  }
 }
-}
-
-
 </style>

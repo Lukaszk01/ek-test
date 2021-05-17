@@ -4,7 +4,6 @@
   Congratulations! You has been succesfully logged in!!.
 </div>
 
-
 <div class="button-login mt-3 ml-3"><router-link class="link" to="/">LOGOUT</router-link></div>
   <transition name="fade">
     <router-view />
@@ -16,12 +15,10 @@
         id="search-form__input"
         type="search"
         autocomplete="off"
-        v-model="query"
-      />
+        v-model="query"/>
       <button @click="show = !show">Search</button>
     </form>
   </div>
-
 
 </template>
 
@@ -50,16 +47,12 @@ export default {
       var i;
       for (i = 0; i < close.length; i++) {
         close[i].onclick = function(){
-
         var div = this.parentElement;
-
-   
         div.style.opacity = "0";
-
-      setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-}
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+      }
+    }
   }
 };
 </script>
@@ -93,8 +86,6 @@ export default {
   font-family: Roboto-Medium;
   margin-bottom: 15px;
   transition-delay: 3s;
-
-  
 }
 /* The close button */
 .closebtn {
@@ -107,7 +98,6 @@ export default {
   cursor: pointer;
   transition: 0.3s;
 }
-
 /* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
@@ -118,5 +108,7 @@ color: white
 a:hover {
   color: #b8b9e3;
 }
-
+.button-login {
+  margin-left: 5px;
+}
 </style>
