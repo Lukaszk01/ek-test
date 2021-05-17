@@ -22,7 +22,7 @@
             <div class="d-flex justify-content-between">
               <div class="d-flex justify-content-start">
                 <div class="checkbox"></div>
-                <p class="log-inf ml-3">REMEBER ME</p>
+                <p class="log-inf-remember ml-3">REMEBER ME</p>
               </div>
             <p class="forgot-password justify-content-end">Forgot Password</p>
           </div>
@@ -141,6 +141,13 @@ export default {
   font-size: 12px;
   color: rgba(0,0,0,0.87);
   text-align: left;
+}
+.log-inf-remember {
+  font-family: Roboto-Medium;
+  font-size: 12px;
+  color: rgba(0,0,0,0.87);
+  text-align: left;
+  margin-left: 8px;
 }
 .thin-text {
   font-family: Roboto-Light;
