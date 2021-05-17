@@ -22,9 +22,9 @@
             <div class="d-flex justify-content-between">
               <div class="d-flex justify-content-start">
                 <div class="checkbox"></div>
-                <p class="log-inf-remember ml-3">REMEBER ME</p>
+                <p class="log-inf-remember ml-3">REMEMBER ME</p>
               </div>
-            <p class="forgot-password justify-content-end">Forgot Password</p>
+            <p class="forgot-password justify-content-end">Forgot Password?</p>
           </div>
         </div>
       </div>
@@ -46,8 +46,8 @@
           <div class="row text-center">
             <div class="col">
               <div class="d-flex justify-content-end">
-                <div class="thin-text p-3">Don't have account yet?</div>
-                <div class="sign-up p-3">Sign Up here</div>
+                <div class="thin-text p-3 ml-3">Don't have an account yet?</div>
+                <div class="sign-up p-3">Sign Up Here</div>
               </div>
             </div>
           </div>
@@ -154,6 +154,7 @@ export default {
   font-size: 12px;
   color: rgba(0,0,0,0.87);
   text-align: right;
+  margin-right: -10px;
 }
 .link {
   color: #fff;
@@ -206,6 +207,7 @@ export default {
   color: rgba(0,0,0,0.87);
   text-align: right;
   text-decoration: underline;
+  margin-right: -16px;
 }
 .link {
   font-family: Roboto-Medium;

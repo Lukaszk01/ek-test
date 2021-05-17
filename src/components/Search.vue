@@ -1,7 +1,7 @@
 <template>
 <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  Congratulations! You has been succesfully logged in!!.
+  Congratulations! You have been successfully logged in!!
 </div>
 
 <div class="button-login mt-3 ml-3"><router-link class="link" to="/">LOGOUT</router-link></div>
@@ -10,7 +10,7 @@
   </transition>
   <div>
     <form @submit.prevent="emitQuery">
-      <label for="search-form__input">Pick a TV show you like!</label>
+      <label for="search-form__input">Find your TV show!</label>
       <input
         id="search-form__input"
         type="search"
